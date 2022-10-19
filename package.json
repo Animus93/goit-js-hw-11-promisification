@@ -1,0 +1,31 @@
+{
+  "name": "goit-js-hw-10-food-service",
+  "version": "2.0.0",
+  "description": "**Читать на других языках: [Русский](README.md), [Українська](README.ua.md).**",
+  "homepage": "https://animus93.github.io/goit-js-hw-10-food-service/",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-10-food-service/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Animus93/goit-js-hw-10-food-service.git"
+  },
+  "keywords": [],
+  "author": "Dmitriy Eremin <animus.dmitriy@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Animus93/goit-js-hw-10-food-service/issues"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.4.12",
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
