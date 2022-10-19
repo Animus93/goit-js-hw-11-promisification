@@ -1,21 +1,21 @@
 {
-  "name": "goit-js-hw-10-food-service",
+  "name": "goit-js-hw-11-promisification",
   "version": "2.0.0",
-  "description": "**Читать на других языках: [Русский](README.md), [Українська](README.ua.md).**",
-  "homepage": "https://animus93.github.io/goit-js-hw-10-food-service/",
+  "description": "",
+  "homepage": "https://animus93.github.io/goit-js-hw-11-promisification/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-10-food-service/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-11-promisification/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Animus93/goit-js-hw-10-food-service.git"
+    "url": "git+https://github.com/Animus93/goit-js-hw-11-promisification.git"
   },
   "keywords": [],
   "author": "Dmitriy Eremin <animus.dmitriy@yandex.ru>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Animus93/goit-js-hw-10-food-service/issues"
+    "url": "https://github.com/Animus93/goit-js-hw-11-promisification/issues"
   },
   "dependencies": {
     "@swc/helpers": "^0.4.12",
