@@ -7,9 +7,10 @@ clear: document.querySelector('.consoleClear')
 
 refs.clear.addEventListener('click', console.clear)
 
-
 // Task 1
-const delay = ms => {
+
+refs.task.addEventListener('click', () => {
+  const delay = ms => {
     return new Promise(() => {
        setTimeout(() => {
             logger(ms);
@@ -18,8 +19,6 @@ const delay = ms => {
   };
 
   const logger = time => console.log(`Resolved after ${time}ms`);
-  
-refs.task.addEventListener('click', () => {
      // Вызовы функции для проверки
   delay(2000).then(logger); // Resolved after 2000ms
   delay(1000).then(logger); // Resolved after 1000ms
@@ -35,53 +34,50 @@ const users = [
   { name: 'Lux', active: false },
 ];
 
-const toggleUserState = (allUsers, userName) => {
-  return new Promise((resolve)=> {
-    const updatedUsers = allUsers.map(user =>
-      user.name === userName ? { ...user, active: !user.active } : user,
-    );
-    resolve(Promise.all(updatedUsers));
-  })
-
-
-};
-
-const Thelogger = updatedUsers => console.table(updatedUsers);
-
 refs.task2.addEventListener('click', () => {
+  const toggleUserState = (allUsers, userName) => {
+    return new Promise((resolve)=> {
+      const updatedUsers = allUsers.map(user =>
+        user.name === userName ? { ...user, active: !user.active } : user,
+      );
+      resolve(Promise.all(updatedUsers));
+    })
+  
+  };
+  
+  const Thelogger = updatedUsers => console.table(updatedUsers);
   toggleUserState(users, 'Mango').then(Thelogger);
   toggleUserState(users, 'Lux').then(Thelogger);
 });
 
 //Task 3
 
-const randomIntegerFromInterval = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-const makeTransaction = (transaction) => {
-  const delay = randomIntegerFromInterval(200, 500);
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const canProcess = Math.random() > 0.3;
-      if (canProcess) {
-       resolve({id: transaction.id, time: delay});
-        } else {
-        reject(transaction.id);
-      }
-    }, delay);
-  })
-};
-
-const logSuccess = ({id, time}) => {
-  console.log(`Transaction ${id} processed in ${time}ms`);
-};
-
-const logError = id => {
-  console.warn(`Error processing transaction ${id}. Please try again later.`);
-};
-
 refs.task3.addEventListener('click', () =>{
+  const randomIntegerFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+  
+  const makeTransaction = (transaction) => {
+    const delay = randomIntegerFromInterval(200, 500);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const canProcess = Math.random() > 0.3;
+        if (canProcess) {
+         resolve({id: transaction.id, time: delay});
+          } else {
+          reject(transaction.id);
+        }
+      }, delay);
+    })
+  };
+  
+  const logSuccess = ({id, time}) => {
+    console.log(`Transaction ${id} processed in ${time}ms`);
+  };
+  
+  const logError = id => {
+    console.warn(`Error processing transaction ${id}. Please try again later.`);
+  };
   makeTransaction({ id: 70, amount: 150 })
   .then(logSuccess)
   .catch(logError);
